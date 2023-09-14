@@ -1,0 +1,115 @@
+Contenido:
+1. Algoritmos
+2. Operadores de flujo
+3. Diagramas de flujo.
+4. Operadores relacionales
+5. Estructura de selección
+6. Estructuras de repetición
+7. Arrgelos unidimensionales
+8. Operadores lógicos
+9. 
+
+
+1. ALGORITMOS
+    "Todo método o 'procedimiento finito' que establece con 'claridad y precisión' la 'secuencia de pasos generales' que deben cumplirse para realixar un 'trabajo determinado'" (Es la manera de resolver un problema).
+
+Procedimiento: Secuencia de pasos.
+Finito: Tiene inicio y fin.
+Claridad y precisión
+General
+Trabajo determinado: Tiene un objetivo.
+
+Ejemplo: Sumar dos números
+    1. Pido los dos números (x, y)
+    2. Sumo los dos numeros (x+y)
+    3. Muestro el resultado
+
+Es más importante entender el problema que saltar a la solución, por lo que siempre le damos el tiempo que necesita al análisis del problema, consultando los datos que nos proveen.
+
+
+
+
+2. OPERADORES ARITMÉTICOS
+Los de toda la vida:
+    - Suma (+)
+    - Resta (-)
+    - Multiplicación (*)
+    - División (/)
+    - Módulo (mod ó %)
+
+- División: SIEMPRE verificar que no se divida por cero, ya que eso hará que nuestro algoritmo se rompa al no poder resolverlo.
+
+- Módulo: Resto de una división.
+    10 / 3 = 3
+    10 mod 3 = 1
+
+
+
+
+3. DIAGRAMAS DE FLUJO
+ Es un tipo de gráfico que sirve para representar algoritmos o procedimientos ordenados y finitos.
+ Como cualquier algoritmo, es:
+    - Finito (tiene inicio y fin)
+    - General (no se cierra a una situación particular)
+    - Preciso (tiene los pasos bien detallados y no ambiguos)
+    - Tiene una o más salidas (siempre se debe completar)
+
+Elementos básicos:
+    - Inicio/Fin
+    - Entrada/Salida
+    - Procedimientos
+    - Flujo de datos
+    - Comentarios
+
+Ejemplo en diagrams.net
+    - https://app.diagrams.net/#HDiegoFenino%2FProyecto-Alfa%2Fmaster%2FDiagrama%20de%20flujo.drawio
+
+
+
+
+4. OPERADORES RELACIONALES
+    Operadores que comparan (relacionan) una sentencia con otra. 
+    Ellos son:
+                - > (Mayor a)
+                - < (Menor a)
+                - >= (Mayor o igual a)
+                - <= (Menor o igual a)
+                - == (Igual a)
+            Estos devuelven uno de dos valores: verdadero o falso (true or false)
+                2 > 3 false
+                4 == 4 true
+                5 <= 10 true
+
+
+
+5. ESTRUCTURAS DE SELECCIÓN
+Son estructuras que desvían el flujo de un algoritmo hacia un u otro lugar según la sentencia que evalúa. Solo tienen dos caminos (true or false)
+Es como un "agente de trafico", que le dice a los automovilistas a donde ir.
+    Ejemplo:
+        Si (2 > 10)
+            hacer A    (camino true)
+        Sino
+            hacer B    (camino false)
+Algo importante "Hace una o la otra" no hace las dos cosas al mismo tiempo.
+
+Se grafican de la siguiente manera: https://app.diagrams.net/#HDiegoFenino%2FProyecto-Alfa%2Fmaster%2FEstructuras%20de%20decisi%C3%B3n.drawio
+
+
+
+
+6. ESTRUCTURAS DE REPETICIÓN
+Son estructuras que generan bucles por una determinada cantidad de vueltas, indicadas en la expresion.
+La expresión es del mismo tipo que las que usamos en las estructuras de selección iterativas (que se repiten).
+
+Siempre van de la mano de una variable iteradora, que se suele denotar con "i".
+Esta se ultiliza para contar la cantidad de vueltas. Suele ir al final de cada ciclo, y está inicializada en 0 antes del bucle.
+Ejemplo:
+        i = 0 (declaro la variable "i" inicializada en 0)
+        Mientras (i < 3)
+            hacer algo...
+            i = i + 1
+    La sentencia "(i < 3)" evalúa en CADA vuelta si nuestro iterador "i" es menor que 3. Si es así, entra a "hacer algo".
+    La sentencia "(i = i + 1)" va aumentando el valor de "i" de 1 en 1 en cada vuelta, al final de cada una.
+    Cuando i == 3, deja de cumplirse que i < 3 (ya no es menor, sino que ES 3), por lo que sale del bucle.
+
+En un diagrama de flujo, se representa así: https://app.diagrams.net/#HDiegoFenino%2FProyecto-Alfa%2Fmaster%2FEstructuras%20de%20repetici%C3%B3n.drawio
