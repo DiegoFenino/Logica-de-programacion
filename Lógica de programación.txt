@@ -7,7 +7,7 @@ Contenido:
 6. Estructuras de repetición
 7. Arrgelos unidimensionales
 8. Operadores lógicos
-9. 
+9. Lógica booleana
 
 
 1. ALGORITMOS
@@ -75,6 +75,7 @@ Ejemplo en diagrams.net
                 - >= (Mayor o igual a)
                 - <= (Menor o igual a)
                 - == (Igual a)
+                - != (Distinto de)
             Estos devuelven uno de dos valores: verdadero o falso (true or false)
                 2 > 3 false
                 4 == 4 true
@@ -111,5 +112,109 @@ Ejemplo:
     La sentencia "(i < 3)" evalúa en CADA vuelta si nuestro iterador "i" es menor que 3. Si es así, entra a "hacer algo".
     La sentencia "(i = i + 1)" va aumentando el valor de "i" de 1 en 1 en cada vuelta, al final de cada una.
     Cuando i == 3, deja de cumplirse que i < 3 (ya no es menor, sino que ES 3), por lo que sale del bucle.
+    Este tipo de estructura se conoce como "while". Primero evalúa la condición y luego hace. Puede que nunca entre al bucle, dadas algunas condiciones.
+    Otro tipo de estructura de repetición tiene la forma:
+        i = 0
+            hacer algo...
+            i = i + 1
+            Mientras (i < 3)
+    Es decir, hace y después verifica la condición del bucle. Se las conoce como "do while". Siempre hará sus tareas al menos 1 vez.
 
 En un diagrama de flujo, se representa así: https://app.diagrams.net/#HDiegoFenino%2FProyecto-Alfa%2Fmaster%2FEstructuras%20de%20repetici%C3%B3n.drawio
+
+
+
+
+7. ARREGLOS UNIDIMENSIONALES
+Un arreglo unidimensional ("array") es un tipo de estructura informática donde se almacenan múltiples datos, uno al lado del otro.
+Cada posición almacena un dato en particular. Este dato puede ser un número, una palabra, o hasta incluso otro arreglo!
+Las posiciones inician en 0 y aumentan de a uno hasta el final.
+Un arreglo de 7 posiciones termina en 6.
+Dado un arreglo X, para acceder a la posición i, se escribe:  X[i] (siempre que esa posición exista)
+X[i] me devuelve el dato almacenado en la posición i del arreglo X.
+
+    Ej: 
+        X [Lunes, Martes, Miercoles, Jueves, Viernes, Sabado, Domingo]  ---> Arreglo (array)
+             0       1        2         3       4        5       6      ---> Posiciones
+        X[1] = Martes
+        X[7] = Error
+
+Se suelen utilizar dentro de estructuras de repetición ya que hay que ir posición por posición asignando valores, o para leerlos.
+Ejemplo: Cargar un array X de 3 posiciones con ceros.
+    i = 0
+    Mientras (i < 3)
+    X [i] = 0  <--- Asigno en la posición "i" del array X el valor de 0
+    i = i + 1  <--- En cada vuelta, i vale uno más que el anterior, por lo que va avanzando
+En un diagrama de flujo, se mantiene la estructura vista.
+>Ejemplos en clases: https://app.diagrams.net/#HDiegoFenino%2FProyecto-Alfa%2Fmaster%2FDiagrama%20sin%20t%C3%ADtulo.drawio
+
+
+
+
+8 y 9. OPERADORES LÓGICOS Y LÓGICA BOOLEANA
+Operadores que relacionan 2 sentencias, y cuyo resultado depende de ambas.
+ Estos son: "and" "not" "or"
+             (y)   (no) (o)
+Operador "and"
+    Devuelve "true" cuando las dos sentencias son true. Sino, devuelve "false".
+    Se representa con "&&"
+Para visualizar esto, utilizamos una tabla llamada "tabla de verdad". La tabla muestra todas las convinaciones posibles y sus resultados.
+
+Operador "or"
+    Devuelve treu cuando al menos una de las dos sentencias es tru. Sino, devuelve false.
+    Se representa con "||"
+
+Operador "not"
+    Devuelve el contrario de la sentencia. 
+    Se representa con "!"
+    De la misma manera, el operador relacional "distinto de" se representa con "!="
+
+Tabla de Operadores: https://app.diagrams.net/#HDiegoFenino%2FProyecto-Alfa%2Fmaster%2FOperadores%20logicos.drawio
+
+Estos Operadores lógicos son los que nos van a permitir evaluar una sentencia.
+Con estos Operadores, estamos en condición de evaluarla siguiente sentencia:
+
+    24 - 15 + 9 / 2 mod 4 == 7 and true
+    Para evaluar esta sentencia, hay que separar en términos
+
+La jerarquía es la siguiente:
+
+    a- El uso de paréntesis rompe las jerarquías. Primero se deben resolver las operaciones que están dentro del paréntesis, respetando jerarquías. Si hay varios niveles de paréntesis se resuelve desde los niveles internos hacia los externos.
+
+    b- Las expresiones se resuelven en el siguiente orden:
+        1º Expresiones aritméticas
+        2º Expresiones de relación
+        3º Expresiones lógicas
+
+    c- Si hay operaciones de la misma jerarquía se resuelven de izquierda a derecha.
+
+    d- La jerarquía de las expresiones aritméticas es la siguiente:
+        1º Multiplicación, División, División entera, Módulo.
+        2º Suma, Resta.
+
+    e- Las expresiones relacionales no tienen jerarquía. Se resuelven de izquierda a derecha.
+
+    f- La jerarquía de las expresiones lógicas es la siguiente:
+        1º not
+        2º and
+        3º or
+
+Entonces, retomando la expresión que habíamos visto hace un rato lo primero que vamos a hacer es separar en terminos.
+    24 - 15 + 9 / 2 mod 4 == 7 and true
+             |-----| primer término, resolver operaciones aritméticas de izquierda a derecha (División, Multiplicación, Módulo)
+             |-----------| segundo término (Módulo) sigue en el mismo nivel de jerarquía
+    |-------| tercer término, Operadores aritméticas de resta y suma (se resuelven de izquierda a derecha)
+    |--------------------| Se suma el resultado de las operaciones anteriores.
+    |------------------------| El resultado se compara con la expresión relacional (esto nos devuelve false o true)
+    |----------------------------------| El resultado (true o false) se compara con la expresión lógica "en este caso and" y arroja el resultado final
+
+    Así quedaría:
+    24 - 15 + 9 / 2 mod 4 == 7 and true
+    24 - 15 + 4.5 mod 4 == 7 and true
+    24 - 15 + 0.5 == 7 and true
+    9 + 0.5 == 7 and true
+    9.5 == 7 and true
+    false and true
+    false
+
+Ejemplo en clases : https://app.diagrams.net/#HDiegoFenino%2FProyecto-Alfa%2Fmaster%2FOperadores%20l%C3%B3gicos%20ejercicios.drawio
