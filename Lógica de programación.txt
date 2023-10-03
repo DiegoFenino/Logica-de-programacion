@@ -11,7 +11,7 @@ Contenido:
 
 
 1. ALGORITMOS
-    "Todo método o 'procedimiento finito' que establece con 'claridad y precisión' la 'secuencia de pasos generales' que deben cumplirse para realixar un 'trabajo determinado'" (Es la manera de resolver un problema).
+    "Todo método o 'procedimiento finito' que establece con 'claridad y precisión' la 'secuencia de pasos generales' que deben cumplirse para realizar un 'trabajo determinado'" (Es la manera de resolver un problema).
 
 Procedimiento: Secuencia de pasos.
 Finito: Tiene inicio y fin.
